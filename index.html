@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لحسن - مصمم ومطور مواقع ويب محترف</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --text: #334155;
+            --text-light: #64748b;
+            --success: #10b981;
+            --whatsapp: #25D366;
+            --gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            --gradient-gold: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* التنقل */
+        .luxury-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .luxury-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        .logo-accent {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .luxury-btn {
+            background: var(--gradient);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .luxury-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* القسم الرئيسي */
+        .luxury-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 2rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .luxury-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-accent {
+            color: var(--accent);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* الأقسام */
+        .luxury-section {
+            padding: 4rem 2rem;
+        }
+
+        .section-dark {
+            background: var(--darker);
+            color: white;
+        }
+
+        .section-light {
+            background: var(--light);
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-dark .section-title {
+            color: white;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-dark .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* الشبكات */
+        .luxury-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .luxury-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .section-dark .luxury-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .luxury-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .popular-badge {
+            background: var(--gradient-gold);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-dark .card-title {
+            color: white;
+        }
+
+        .card-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .price-note {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .section-dark .price-note {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .card-features {
+            list-style: none;
+            text-align: right;
+            margin-bottom: 2rem;
+        }
+
+        .card-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-dark .card-features li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card-features li i {
+            color: var(--success);
+        }
+
+        /* الاتصال */
+        .contact-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .contact-method {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .section-dark .contact-method {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-method:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .contact-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-detail {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            direction: ltr;
+        }
+
+        .section-dark .contact-detail {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .response-time {
+            color: var(--success);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* التذييل */
+        .luxury-footer {
+            background: var(--darker);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* وسائل التواصل العائمة */
+        .floating-contacts {
+            position: fixed;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 999;
+        }
+
+        .floating-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .floating-btn.whatsapp {
+            background: var(--whatsapp);
+        }
+
+        .floating-btn.phone {
+            background: var(--primary);
+        }
+
+        .floating-btn.email {
+            background: var(--success);
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* التجاوب */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .luxury-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .floating-contacts {
+                display: none;
+            }
+            
+            .luxury-section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- وسائل التواصل العائمة -->
+    <div class="floating-contacts">
+        <a href="https://wa.me/213668765936" class="floating-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+213668765936" class="floating-btn phone">
+            <i class="fas fa-phone"></i>
+        </a>
+        <a href="mailto:lahsane2006@gmail.com" class="floating-btn email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+
+    <!-- التنقل -->
+    <nav class="luxury-nav">
+        <div class="nav-container">
+            <a href="#home" class="luxury-logo">
+                لح<span class="logo-accent">سن</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#portfolio">أعمالي</a></li>
+                <li><a href="#pricing">الأسعار</a></li>
+                <li><a href="#contact">اتصل بي</a></li>
+            </ul>
+            
+            <a href="#contact" class="luxury-btn">اطلب خدمة</a>
+        </div>
+    </nav>
+
+    <!-- القسم الرئيسي -->
+    <section id="home" class="luxury-hero">
+        <div class="hero-container">
+            <div class="luxury-badge">🚀 مصمم مواقع ويب محترف</div>
+            <h1 class="hero-title">
+                أحول <span class="hero-accent">أفكارك</span><br>
+                إلى مواقع ويب مذهلة
+            </h1>
+            <p class="hero-description">
+                أصمم مواقع ويب احترافية تجمع بين الجمال البصري والأداء المتميز
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="#pricing" class="luxury-btn" style="background: var(--gradient-gold);">
+                    اطلع على الأسعار
+                </a>
+                <a href="#contact" class="luxury-btn" style="background: transparent; border: 2px solid white;">
+                    تواصل معي
+                </a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">مشروع مكتمل</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">عملاء سعداء</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3+</span>
+                    <span class="stat-label">سنوات خبرة</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأعمال -->
+    <section id="portfolio" class="luxury-section section-light">
+        <div class="section-header">
+            <div class="section-tag">أعمالي</div>
+            <h2 class="section-title">أحدث مشاريعي</h2>
+            <p class="section-subtitle">تصاميم استثنائية تعكس الإبداع والاحترافية</p>
+        </div>
+        
+        <div class="luxury-grid">
+            <div class="luxury-card">
+                <div class="card-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3 class="card-title">متاجر إلكترونية</h3>
+                <p class="price-note">متاجر رقمية متكاملة بتجربة مستخدم استثنائية</p>
+            </div>
+            
+            <div class="luxury-card">
+                <div class="card-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3 class="card-title">مواقع الشركات</h3>
+                <p class="price-note">مواقع مؤسسية تعكس هوية العلامة التجارية</p>
+            </div>
+            
+            <div class="luxury-card">
+                <div class="card-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3 class="card-title">تطبيقات الويب</h3>
+                <p class="price-note">تطبيقات ويب متقدمة بميزات فريدة</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأسعار - يظهر بشكل صحيح -->
+    <section id="pricing" class="luxury-section section-dark">
+        <div class="section-header">
+            <div class="section-tag">باقات الأسعار</div>
+            <h2 class="section-title">استثمر في نجاحك</h2>
+            <p class="section-subtitle">اختر الباقة التي تناسب احتياجاتك وميزانيتك</p>
+        </div>
+        
+        <div class="luxury-grid">
+            <div class="luxury-card">
+                <div class="card-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3 class="card-title">الباقة الأساسية</h3>
+                <div class="card-price">149$</div>
+                <p class="price-note">مثالية للمشاريع الصغيرة</p>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> موقع من 3-5 صفحات</li>
+                    <li><i class="fas fa-check"></i> تصميم متجاوب</li>
+                    <li><i class="fas fa-check"></i> نموذج اتصال</li>
+                    <li><i class="fas fa-check"></i> SEO أساسي</li>
+                    <li><i class="fas fa-check"></i> دعم أسبوعين</li>
+                    <li><i class="fas fa-check"></i> تسليم 7 أيام</li>
+                </ul>
+                <a href="#contact" class="luxury-btn">اختر الباقة</a>
+            </div>
+            
+            <div class="luxury-card">
+                <div class="popular-badge">الأكثر طلباً</div>
+                <div class="card-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3 class="card-title">الباقة المتقدمة</h3>
+                <div class="card-price">299$</div>
+                <p class="price-note">مثالية للشركات الناشئة</p>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> موقع من 5-10 صفحات</li>
+                    <li><i class="fas fa-check"></i> تصميم متقدم</li>
+                    <li><i class="fas fa-check"></i> نظام إدارة محتوى</li>
+                    <li><i class="fas fa-check"></i> SEO متقدم</li>
+                    <li><i class="fas fa-check"></i> دعم شهر كامل</li>
+                    <li><i class="fas fa-check"></i> تسليم 10 أيام</li>
+                </ul>
+                <a href="#contact" class="luxury-btn" style="background: var(--gradient-gold);">اختر الباقة</a>
+            </div>
+            
+            <div class="luxury-card">
+                <div class="card-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3 class="card-title">الباقة المميزة</h3>
+                <div class="card-price">499$</div>
+                <p class="price-note">مثالية للشركات الكبيرة</p>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> موقع من 10-15 صفحة</li>
+                    <li><i class="fas fa-check"></i> ميزات مخصصة</li>
+                    <li><i class="fas fa-check"></i> متجر إلكتروني</li>
+                    <li><i class="fas fa-check"></i> SEO احترافي</li>
+                    <li><i class="fas fa-check"></i> دعم 3 أشهر</li>
+                    <li><i class="fas fa-check"></i> تسليم 14 يوماً</li>
+                </ul>
+                <a href="#contact" class="luxury-btn">اختر الباقة</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الاتصال -->
+    <section id="contact" class="luxury-section section-white">
+        <div class="section-header">
+            <div class="section-tag">اتصل بي</div>
+            <h2 class="section-title">لنبدأ مشروعك</h2>
+            <p class="section-subtitle">تواصل معي الآن لتحويل فكرتك إلى واقع</p>
+        </div>
+        
+        <div class="contact-grid">
+            <div class="contact-method">
+                <div class="contact-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h3 class="contact-title">الواتساب</h3>
+                <p class="contact-detail">+213 668 765 936</p>
+                <p class="response-time">رد فوري</p>
+                <a href="https://wa.me/213668765936" class="luxury-btn" style="background: var(--whatsapp);">
+                    راسلني الآن
+                </a>
+            </div>
+            
+            <div class="contact-method">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3 class="contact-title">هاتف</h3>
+                <p class="contact-detail">+213 668 765 936</p>
+                <p class="response-time">اتصال مباشر</p>
+                <a href="tel:+213668765936" class="luxury-btn">اتصل بي</a>
+            </div>
+            
+            <div class="contact-method">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3 class="contact-title">بريد إلكتروني</h3>
+                <p class="contact-detail">lahsane2006@gma
